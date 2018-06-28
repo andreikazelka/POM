@@ -7,7 +7,7 @@
 	</listeners>
 
 
-	<test name="Free CRM App Test Cases">
+	<test name="Pluralsight Test Cases">
 		<classes>
 			<class name="com.andrei.test.testcases.LoginPageTest"></class>
 			<class name="com.andrei.test.testcases.HomePageTest"></class>

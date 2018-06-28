@@ -14,6 +14,7 @@ public class LoginPageTest extends TestBase {
 	LoginPage loginPage;
 	HomePage homePage;
 	
+	
 	public LoginPageTest(){
 		super(); //used to invoke immediate parent class constructor.
 		System.out.println("Invoke " + this.getClass() + " constructor");
