@@ -57,14 +57,19 @@ public class TestBase {
 		e_driver.register(eventListener);
 		driver = e_driver;
 		
-		driver.manage().window().maximize();
-		driver.manage().deleteAllCookies();
-		driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
-		driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
-		
 		String url = prop.getProperty("url");
 		driver.get(url);
 		System.out.println("URL: " + url);
+		
+		 try {
+	            driver.manage().window().maximize();
+	         } catch (Exception e) {
+	            System.out.println("tryn");
+	         }		driver.manage().deleteAllCookies();
+		driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
+		
+		
 		
 	}
 }
