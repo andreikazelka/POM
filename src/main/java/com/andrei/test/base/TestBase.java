@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -57,12 +58,9 @@ public class TestBase {
 		e_driver.register(eventListener);
 		driver = e_driver;
 		
-		
-		 try {
-	            driver.manage().window().maximize();
-	         } catch (Exception e) {
-	            System.out.println("tryn");
-	         }		driver.manage().deleteAllCookies();
+//		driver.manage().window().maximize();
+		driver.manage().window().setSize(new Dimension(1600, 800));
+		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
 		
